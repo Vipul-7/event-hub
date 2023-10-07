@@ -1,5 +1,5 @@
-Create and see the available tech events at the global level and expand your network. 
-Previous repo with this project was deleted due to some issues so this is the new repo with the same project.
+Create and see the available tech events at the global level and expand your network.
+-Previous repo with this project was deleted due to some issues so this is the new repo with the same project.
 
 ## Description
 
