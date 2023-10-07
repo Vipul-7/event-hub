@@ -3,7 +3,7 @@ import { QueryClient } from "@tanstack/react-query";
 export const queryClient = new QueryClient();
 
 export async function fetchEvents({ signal, searchTerm, max }) {
-  let url = "https://event-hub-g4td.onrender.com/events";
+  let url = "https://event-hub-gy7m.onrender.com/events";
 
   if (searchTerm && max) {
     url += "?search=" + searchTerm + "&max=" + max;
@@ -22,13 +22,15 @@ export async function fetchEvents({ signal, searchTerm, max }) {
     throw error;
   }
 
+  console.log(response);
+
   const { events } = await response.json();
 
   return events;
 }
 
 export async function createNewEvent(eventData) {
-  const response = await fetch(`https://event-hub-g4td.onrender.com/events`, {
+  const response = await fetch(`https://event-hub-gy7m.onrender.com/events`, {
     method: "POST",
     body: JSON.stringify(eventData),
     headers: {
@@ -49,7 +51,7 @@ export async function createNewEvent(eventData) {
 }
 
 export async function fetchSelectableImages({ signal }) {
-  const response = await fetch(`https://event-hub-g4td.onrender.com/events/images`, {
+  const response = await fetch(`https://event-hub-gy7m.onrender.com/events/images`, {
     signal,
   });
 
@@ -66,7 +68,7 @@ export async function fetchSelectableImages({ signal }) {
 }
 
 export async function fetchEvent({ id, signal }) {
-  const response = await fetch(`https://event-hub-g4td.onrender.com/events/${id}`, {
+  const response = await fetch(`https://event-hub-gy7m.onrender.com/events/${id}`, {
     signal,
   });
 
@@ -83,7 +85,7 @@ export async function fetchEvent({ id, signal }) {
 }
 
 export async function deleteEvent({ id }) {
-  const response = await fetch(`https://event-hub-g4td.onrender.com/events/${id}`, {
+  const response = await fetch(`https://event-hub-gy7m.onrender.com/events/${id}`, {
     method: "DELETE",
   });
 
@@ -98,7 +100,7 @@ export async function deleteEvent({ id }) {
 }
 
 export async function updateEvent({ id, event }) {
-  const response = await fetch(`https://event-hub-g4td.onrender.com/events/${id}`, {
+  const response = await fetch(`https://event-hub-gy7m.onrender.com/events/${id}`, {
     method: "PUT",
     body: JSON.stringify({ event }),
     headers: {
